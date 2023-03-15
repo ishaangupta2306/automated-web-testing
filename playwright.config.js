@@ -54,6 +54,12 @@ module.exports = defineConfig({
         ...devices['iPhone 12'],
       },
     },
+    {
+      name: 'Mobile Safari',
+      use: {
+        ...devices['iPhone 6'],
+      },
+    },
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */

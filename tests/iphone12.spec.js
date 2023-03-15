@@ -6,10 +6,10 @@ test.use({
     viewport: { width: 600, height: 900 },
 });
 
-test('Test on iPhone 6 emulator', async () => {
+test('Test on iPhone 12 emulator', async () => {
     const browser = await chromium.launch();
     const context = await browser.newContext({
-        ...devices['iPhone 6'],
+        ...devices['iPhone 12'],
         locale: 'en-US',
         geolocation: { longitude: 12.492507, latitude: 41.890202 },
         permissions: ['geolocation', 'camera', 'microphone'],
