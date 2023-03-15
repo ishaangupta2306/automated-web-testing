@@ -31,3 +31,10 @@ test('soft assertion', async ({ page }) => {
     console.error('Soft assertion failed:', error);
   }
 })
+
+
+test.only('test only', async ({ page }) => {
+  await page.goto('https://pppariyojana.com/training/agile/ACP');
+  const title = await page.title();
+  expect(title).toContain('Pariyojana');
+});
