@@ -17,3 +17,17 @@ test('get started link', async ({ page }) => {
   // Expects the URL to contain intro.
   await expect(page).toHaveURL(/.*intro/);
 });
+
+test('soft assertion', async ({ page }) => {
+  try {
+    // Perform some actions that should result in a certain outcome
+    await page.goto('https://pppariyojana.com/training/agile/ACP');
+    const title = await page.title();
+    expect(title).toContain('Pariyojana');
+
+    // This is a soft assertion
+    expect(await page.title()).toContain('Welcome');
+  } catch (error) {
+    console.error('Soft assertion failed:', error);
+  }
+})
