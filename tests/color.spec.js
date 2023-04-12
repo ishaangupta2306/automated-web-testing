@@ -1,9 +1,10 @@
+const { test } = require('@playwright/test');
 const { chromium } = require('playwright');
 
-(async () => {
+test('Emulate color scheme for google.com', async () => {
     const browser = await chromium.launch();
     const context = await browser.newContext({
-        colorScheme: 'dark' // Emulate dark mode
+        colorScheme: 'dark'
     });
     const page = await context.newPage();
 
@@ -19,3 +20,8 @@ const { chromium } = require('playwright');
 
     await browser.close();
 })();
+
+// Override your emulation using test.use 
+test.use('Overriding browser configuration', async () => {
+
+});
